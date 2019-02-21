@@ -22,6 +22,7 @@ public class PasswordGenerator {
 
         String randomCharacters = "";
 
+        //This could be a for loop
         randomCharacters += pickCharactersFromList(1, characterTypeList.get(0));
         randomCharacters += pickCharactersFromList(1, characterTypeList.get(1));
         randomCharacters += pickCharactersFromList(1, characterTypeList.get(2));
@@ -29,11 +30,16 @@ public class PasswordGenerator {
         return randomCharacters;
     }
 
+    //method visibility?
     public String pickCharactersFromList(int numberAmount, String alphabet) {
+        //variable naming?
         int N = alphabet.length();
+        //maybe character isn't the best name?
         String character = "";
+        //resuse the Random instance?
         Random r = new Random();
 
+        //concatenating strings in a loop
         for (int i = 0; i < numberAmount; i++) {
            character += alphabet.charAt(r.nextInt(N));
         }
@@ -42,6 +48,7 @@ public class PasswordGenerator {
         return  character;
     }
 
+    //method visibility?
     public String shuffle (String orderedPassword) {
 
         List<Character> chars = new ArrayList<>();
@@ -53,6 +60,7 @@ public class PasswordGenerator {
         Collections.shuffle(chars);
 
         String newPassword = "";
+        //think about concatenating strings in a loop
         for (char ch: chars) {
             newPassword+= ch;
         }
